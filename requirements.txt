@@ -11,3 +11,5 @@ oauth2client
 pyotp
 joblib
 numpy
+keras
+tensorflow
