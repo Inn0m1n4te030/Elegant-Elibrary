@@ -67,7 +67,7 @@ UPLOAD_FOLDER = 'static/upload'
 ALLOWED_EXTENSIONS = {'png','pdf', 'jpg', 'jpeg', 'gif', 'svg'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# Configure Google Recaptcha keys
+# Configure Google Recaptcha keys for 127.0.0.1
 app.config['RECAPTCHA_SITE_KEY'] = '6LdPgnQhAAAAABeSZUIFYts9dTRP2N6RiKbtYRpv' 
 app.config['RECAPTCHA_SECRET_KEY'] = '6LdPgnQhAAAAAOrrfRxmNmazPAupYBau_N6OXDiH' 
 recaptcha = ReCaptcha(app) 
