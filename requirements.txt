@@ -13,4 +13,5 @@ numpy
 keras
 stripe
 sklearn
+scikit-learn
 tensorflow
