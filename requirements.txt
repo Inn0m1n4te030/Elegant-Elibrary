@@ -11,4 +11,6 @@ pyotp
 joblib
 numpy
 keras
+stripe
+sklearn
 tensorflow
