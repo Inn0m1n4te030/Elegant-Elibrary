@@ -24,7 +24,7 @@ import alerting
 import joblib
 import numpy as np
 
-stripe.api_key = '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'
+stripe.api_key = 'YOUR API'
 
 # Load the saved model
 model = load_model("sql_injection_detection_model3.h5")
