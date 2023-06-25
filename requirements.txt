@@ -1,0 +1,13 @@
+Flask
+Flask-Session
+Flask-reCaptcha==0.4.2
+flask_limiter
+jinja2==3.0.0
+cs50
+gspread 
+password_strength
+socket
+oauth2client
+pyotp
+joblib
+numpy

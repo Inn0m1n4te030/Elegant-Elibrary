@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block title %}
+    Contact
+{% endblock %}
+
+{% block body %}
+
+
+<div id="contact">
+    <h1 id="contact">Feedback Form</h1>
+    <form action="/contact" class="form" methods="post" name="submit-to-google-sheet">
+    <input name="Name" type="text" class="input" placeholder="Enter Your Name" id="reset1">
+    <input name="Email" type="email" class="input" placeholder="Enter Your Email" id="reset2">
+    <textarea name="Message" id="msg" cols="30" rows="10" placeholder="Enter Your Message"></textarea >
+    <input type="submit" value="SEND" id="send">
+    </form>
+    <span id="suc"></span>
+    </div>
+
+    <div class="footer">
+        <div class="col-1">
+             <h3>USEFUL LINKS</h3>
+             <a href="/">Home</a>
+             <a href="/account">Account</a>
+             <a href="/logout">Log Out</a>
+         </div>
+         
+         <div class="col-2">
+             <h3>NEWSLETTER</h3>
+             <form>
+                 <input type="email" placeholder="Your email address" required class="formm">
+                 <br>
+                 <button type="submit">SUBSCRIBE NOW</button>
+             </form>
+         </div>
+         
+         
+         <div class="col-3">
+             <h3>CONTACT</h3>
+             <p>123 Raffles Road,Singapore,123456</p>
+             <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin"></i>
+            
+            </div>
+         </div>
+     
+     </div>
+
+
+    <script>
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzaDNxkdTsv0ynaujelmvR6lQP81Zqn9FeTge72MPH4vDKdmJWK3FJ1Oyl3mAr7WspL1w/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const suc = document.getElementById("suc")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                suc.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    suc.innerHTML = ""
+                },5000)
+                form.reset
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+            document.getElementById('reset1').value='';
+            document.getElementById('reset2').value='';
+            document.getElementById('msg').value='';
+      </script>
+    {% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Subscribe
+{% endblock %}
+
+{% block body %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="container">
+                <div class="row">
+                 <div class="col-12">
+                        <div class="d-flex justify-content-center mt-5">
+                            <div class="mt-5 alert alert-danger w-50" role="alert">
+                                {{ message }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<head>
+    <title>Subscription Page</title>
+</head>
+<body>
+    <h1 align="center">Subscription Page</h1>
+    
+    <p align="center">Welcome to our subscription page! Subscribe now and gain access to our premium content.</p>
+    
+    <h2 align="center">Monthly Subscription - $0.5</h2>
+    
+    <p align="center">To proceed with the subscription, click the button below:</p>
+    
+    <p align="center"><button onclick="location.href = 'https://buy.stripe.com/aEUg0m2KdfEGaqIaEF'"  >Pay with Card</button></p>
+    
+
+        </script>
+    </form>
+</body>
+</html>
+
+{% endblock %}

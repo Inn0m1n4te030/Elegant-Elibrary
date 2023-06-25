@@ -1,0 +1,35 @@
+{% extends "admin-layout.html" %}
+
+{% block title %}
+  Users
+{% endblock %}
+
+{% block content %}
+
+    <div class="p-5 bg-light col">
+        <h3 class="text-primary text-center my-5">Number Of Users {{ count }}</h3>
+        
+            <table class="table mb-5">
+                <tbody>
+                  <tr>
+                    <td>Username</td>
+                    <td>Full Name</td>
+                    <td>Email</td>
+                    <td>Date of Birth</td>
+                    <td>Address</td> 
+                  </tr>
+                  {% for userinfo in userInfos %}
+                  <tr>
+                    <td>{{ userinfo["username"] }}</td>
+                    <td>{{ userinfo["fullname"] }}</td>
+                    <td>{{ userinfo["email"] }}</td>
+                    <td>{{ userinfo["birth"] }}</td>
+                    <td>{{ userinfo["address"] }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+            
+    </div>
+
+{% endblock %}
