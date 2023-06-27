@@ -24,7 +24,7 @@ import joblib
 import numpy as np
 from dateutil import parser
 
-stripe.api_key = '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'
+stripe.api_key = 'YOUR API'
 
 # Load the saved model
 model = load_model("sql_injection_detection_model3.h5")
@@ -67,7 +67,7 @@ UPLOAD_FOLDER = 'static/upload'
 ALLOWED_EXTENSIONS = {'png','pdf', 'jpg', 'jpeg', 'gif', 'svg'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# Configure Google Recaptcha keys
+# Configure Google Recaptcha keys for 127.0.0.1
 app.config['RECAPTCHA_SITE_KEY'] = '6LdPgnQhAAAAABeSZUIFYts9dTRP2N6RiKbtYRpv' 
 app.config['RECAPTCHA_SECRET_KEY'] = '6LdPgnQhAAAAAOrrfRxmNmazPAupYBau_N6OXDiH' 
 recaptcha = ReCaptcha(app) 

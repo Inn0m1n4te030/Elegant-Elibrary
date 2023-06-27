@@ -14,4 +14,8 @@ keras
 stripe
 sklearn
 scikit-learn
+<<<<<<< HEAD
 tensorflow
+=======
+tensorflow
+>>>>>>> 0106198e699bdd0fa1882a80ce5e2fd6374b6105
