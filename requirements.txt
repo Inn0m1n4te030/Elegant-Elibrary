@@ -6,8 +6,12 @@ jinja2==3.0.0
 cs50
 gspread 
 password_strength
-socket
 oauth2client
 pyotp
 joblib
 numpy
+keras
+stripe
+sklearn
+scikit-learn
+tensorflow

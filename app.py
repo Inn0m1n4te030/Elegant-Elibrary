@@ -1,7 +1,6 @@
 import os
 from flask import Flask, render_template, redirect, request, session, url_for, flash, render_template_string
 from flask_session import Session
-from jinja2 import Markup
 from cs50 import SQL
 from werkzeug.utils import secure_filename
 from helper import error, success
@@ -23,6 +22,7 @@ import pyotp
 import alerting
 import joblib
 import numpy as np
+from dateutil import parser
 
 stripe.api_key = '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'
 
@@ -97,7 +97,9 @@ def index():
     
     else:
         subscription_id = session.get("subscription_id")
-        if  not dt.strptime(subscription_id,'%Y-%m-%d %H:%M:%S') >= dt.now():
+        subscription_time = parser.parse(str(subscription_id))
+        print(subscription_time >= dt.now())
+        if  not subscription_time >= dt.now():
             flash("You subscription has expired. Please subscribe again!.")
             return redirect("/subscribe")
         
